@@ -1,25 +1,37 @@
 <h1 align="center"><a href="https://github.com/MoOx/pjax" target="_blank" rel="noopener">PJAX</a> for <a href="https://github.com/theme-next" target="_blank" rel="noopener">NexT</a></h1>
+
 <h1 align="center">Installation</h1>
+
 <h2>If you want to use the CDN instead of clone this repo, please jump to the Step 3.</h2>
+
 <h2 align="center">Step 1 &rarr; Go to NexT dir</h2>
-<p>Change dir to <strong>NexT</strong> directory. There must be  <code>layout</code> ,  <code>source</code> ,  <code>languages</code>  and other directories:</p>
-<pre><code class="language-sh">$ cd themes/next
+
+<p>Change dir to <strong>NexT</strong> directory. There must be <code>layout</code>, <code>source</code>, <code>languages</code> and other directories:</p>
+<pre><code class="sh">$ cd themes/next
 $ ls
 _config.yml  crowdin.yml  docs  gulpfile.js  languages  layout  LICENSE.md  package.json  README.md  scripts  source
 </code></pre>
 <h2 align="center">Step 2 &rarr; Get module</h2>
-<p>Install module to  <code>source/lib</code>  directory:</p>
-<pre><code class="language-sh">$ git clone https://github.com/theme-next/theme-next-pjax source/lib/pjax
+
+<p>Install module to <code>source/lib</code> directory:</p>
+<pre><code class="sh">$ git clone https://github.com/theme-next/theme-next-pjax source/lib/pjax
 </code></pre>
 <h2 align="center">Step 3 &rarr; Set it up</h2>
-<p>Enable module in <strong>NexT</strong>  <code>_config.yml</code>  file and select your theme:</p>
-<figure class="highlight yml"><figcaption data-lang="YAML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token key atrule">pjax</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></pre></td></tr></table></figure><p><strong>And, if you wants to use the CDN, then need to set:</strong> (you also need to find your corresponding theme css link in <a href="https://www.jsdelivr.com/package/npm/pjax-js?path=themes" target="_blank" rel="noopener">jsdelivr</a>)</p>
-<figure class="highlight yml"><figcaption data-lang="YAML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token key atrule">vendors</span><span class="token punctuation">:</span></pre></td></tr><tr><td data-num="2"></td><td><pre>  <span class="token punctuation">...</span></pre></td></tr><tr><td data-num="3"></td><td><pre>  <span class="token key atrule">pjax</span><span class="token punctuation">:</span> //cdn.jsdelivr.net/gh/theme<span class="token punctuation">-</span>next/theme<span class="token punctuation">-</span>next<span class="token punctuation">-</span>pjax@0/pjax.min.js</pre></td></tr></table></figure><h1 align="center">Update</h1>
-<pre><code class="language-sh">$ cd themes/next/source/lib/pjax
+
+<p>Enable module in <strong>NexT</strong> <code>_config.yml</code> file and select your theme:</p>
+<pre><code class="yml">pjax: true
+</code></pre>
+<p><strong>And, if you wants to use the CDN, then need to set:</strong> (you also need to find your corresponding theme css link in <a href="https://www.jsdelivr.com/package/npm/pjax-js?path=themes" target="_blank" rel="noopener">jsdelivr</a>)</p>
+<pre><code class="yml">vendors:
+  ...
+  pjax: //cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js
+</code></pre>
+<h1 align="center">Update</h1>
+
+<pre><code class="sh">$ cd themes/next/source/lib/pjax
 $ git pull
 </code></pre>
-<h1 id="pjax"><a class="markdownIt-Anchor" href="#pjax">#</a> Pjax</h1>
-<p><a href="https://travis-ci.org/MoOx/pjax" target="_blank" rel="noopener"><img src="https://img.shields.io/travis/MoOx/pjax.svg" alt="Build Status"></a>.</p>
+<h1 id="Pjax"><a href="#Pjax" class="headerlink" title="Pjax"></a>Pjax</h1><p><a href="https://travis-ci.org/MoOx/pjax" target="_blank" rel="noopener"><img src="https://img.shields.io/travis/MoOx/pjax.svg" alt="Build Status"></a>.</p>
 <blockquote>
 <p>Easily enable fast AJAX navigation on any website (using pushState() + XHR)</p>
 </blockquote>
@@ -27,35 +39,42 @@ $ git pull
 <p><em>It allows you to completely transform the user experience of standard websites (server-side generated or static ones) to make users feel like they are browsing an app, especially for those with low bandwidth connections.</em></p>
 <p><strong>No more full page reloads. No more multiple HTTP requests.</strong></p>
 <p><em>Pjax does not rely on other libraries, like jQuery or similar. It is written entirely in vanilla JS.</em></p>
-<h2 id="installation"><a class="markdownIt-Anchor" href="#installation">#</a> Installation</h2>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><ul>
+<li><p>You can link directly to the <a href="https://cdn.jsdelivr.net/npm/pjax/pjax.js" target="_blank" rel="noopener">bundle</a>:</p>
+<pre><code class="html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/pjax@VERSION/pjax.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+</li>
+<li><p>Or the <a href="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js" target="_blank" rel="noopener">minified bundle</a>:</p>
+<pre><code class="html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/pjax@VERSION/pjax.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+</li>
+<li><p>You can also install Pjax from <strong>npm</strong>:</p>
+<pre><code class="shell">npm install pjax
+</code></pre>
+<p><strong>Note</strong>: If you use this option, you will need to do one of the following:</p>
 <ul>
-<li>
-<p>You can link directly to the <a href="https://cdn.jsdelivr.net/npm/pjax/pjax.js" target="_blank" rel="noopener">bundle</a>:</p>
-<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/pjax@VERSION/pjax.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></pre></td></tr></table></figure></li>
-<li>
-<p>Or the <a href="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js" target="_blank" rel="noopener">minified bundle</a>:</p>
-<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/pjax@VERSION/pjax.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></pre></td></tr></table></figure></li>
-<li>
-<p>You can also install Pjax from <strong>npm</strong>:</p>
-<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">npm</span> <span class="token function">install</span> pjax</pre></td></tr></table></figure><p><strong>Note</strong>: If you use this option, you will need to do one of the following:</p>
-<ul>
-<li>Link a script tag to either  <code>pjax.js</code>  or  <code>pjax.min.js</code> . E.g.:</li>
-</ul>
-<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>./node_modules/pjax/pjax.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><ul>
-<li>Use a bundler like Webpack. ( <code>index.js</code>  cannot be used in the browser without a bundler).</li>
+<li>Link a script tag to either <code>pjax.js</code> or <code>pjax.min.js</code>. E.g.:<pre><code class="html">&lt;script src=&quot;./node_modules/pjax/pjax.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+</li>
+<li>Use a bundler like Webpack. (<code>index.js</code> cannot be used in the browser without a bundler).</li>
 </ul>
 </li>
-<li>
-<p>Or you can clone the repo and build the bundle from the source using npm:</p>
-<figure class="highlight shell"><figcaption data-lang="Bash"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token function">git</span> clone https://github.com/MoOx/pjax.git</pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token builtin class-name">cd</span> pjax</pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token function">npm</span> <span class="token function">install</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token function">npm</span> run build</pre></td></tr></table></figure><p>and then link a script tag to either  <code>pjax.js</code>  or  <code>pjax.min.js</code> . E.g.:</p>
-<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>./pjax.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></pre></td></tr></table></figure></li>
+<li><p>Or you can clone the repo and build the bundle from the source using npm:</p>
+<pre><code class="shell">git clone https://github.com/MoOx/pjax.git
+cd pjax
+npm install
+npm run build
+</code></pre>
+<p>and then link a script tag to either <code>pjax.js</code> or <code>pjax.min.js</code>. E.g.:</p>
+<pre><code class="html">&lt;script src=&quot;./pjax.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+</li>
 </ul>
 <hr>
-<h2 id="what-pjax-does"><a class="markdownIt-Anchor" href="#what-pjax-does">#</a> What Pjax Does</h2>
-<p><em>Under the hood, it’s just ONE HTTP request with a  <code>pushState()</code>  call.</em></p>
-<p>Pjax loads pages using AJAX and updates the browser’s current URL using  <code>pushState()</code>  <em>without</em> reloading your page’s layout or any resources (JS, CSS), giving a fast page load.</p>
+<h2 id="What-Pjax-Does"><a href="#What-Pjax-Does" class="headerlink" title="What Pjax Does"></a>What Pjax Does</h2><p><em>Under the hood, it’s just ONE HTTP request with a <code>pushState()</code> call.</em></p>
+<p>Pjax loads pages using AJAX and updates the browser’s current URL using <code>pushState()</code> <em>without</em> reloading your page’s layout or any resources (JS, CSS), giving a fast page load.</p>
 <p>It works with all permalinks and can update all the parts of the page you want (including HTML metas, title, and navigation state).</p>
-<p>In the case of <a href="http://caniuse.com/#search=pushstate" target="_blank" rel="noopener">browsers that don’t support  <code>history.pushState()</code> </a>, Pjax gracefully degrades and does not do anything at all.</p>
+<p>In the case of <a href="http://caniuse.com/#search=pushstate" target="_blank" rel="noopener">browsers that don’t support <code>history.pushState()</code></a>, Pjax gracefully degrades and does not do anything at all.</p>
 <p>Additionally, Pjax:</p>
 <ul>
 <li>Is not limited to one container, like jQuery-Pjax is.</li>
@@ -66,31 +85,79 @@ $ git pull
 <li>Allows for CSS transitions (animations) very easily.</li>
 <li>Is only around 6kb (minified and gzipped).</li>
 </ul>
-<h2 id="how-pjax-works"><a class="markdownIt-Anchor" href="#how-pjax-works">#</a> How Pjax Works</h2>
-<ul>
+<h2 id="How-Pjax-Works"><a href="#How-Pjax-Works" class="headerlink" title="How Pjax Works"></a>How Pjax Works</h2><ul>
 <li>It listens to every click on links <em>you want</em> (by default all of them).</li>
 <li>When an internal link is clicked, Pjax fetches the page’s HTML via AJAX.</li>
 <li>Pjax renders the page’s DOM tree (without loading any resources - images, CSS, JS, etc).</li>
-<li>It checks that all defined parts can be replaced:
-<ul>
+<li>It checks that all defined parts can be replaced:<ul>
 <li>If the page doesn’t meet the requirements, standard navigation is used.</li>
 <li>If the page meets the requirements, Pjax does all defined DOM replacements.</li>
 </ul>
 </li>
-<li>Then it updates the browser’s current URL using  <code>pushState()</code> .</li>
+<li>Then it updates the browser’s current URL using <code>pushState()</code>.</li>
 </ul>
-<h2 id="overview"><a class="markdownIt-Anchor" href="#overview">#</a> Overview</h2>
-<p><em>Pjax is fully automatic</em>. You don’t need to change anything about your existing HTML,<br>
-you just need to designate which elements on your page that you want to be replaced when your site is navigated.</p>
+<h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p><em>Pjax is fully automatic</em>. You don’t need to change anything about your existing HTML,<br>you just need to designate which elements on your page that you want to be replaced when your site is navigated.</p>
 <p>Consider the following page.</p>
-<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="4"></td><td><pre>  <span class="token comment">&lt;!-- metas, title, styles, etc --></span></pre></td></tr><tr><td data-num="5"></td><td><pre>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>My Cool Blog<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="6"></td><td><pre>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>description<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Welcome to My Cool Blog<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="7"></td><td><pre>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/styles.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="9"></td><td><pre></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="11"></td><td><pre>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>the-header<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="12"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="13"></td><td><pre>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>is-active<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Home<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="14"></td><td><pre>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/about<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>About<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="15"></td><td><pre>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/contact<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Contact<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="16"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="17"></td><td><pre>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="18"></td><td><pre></pre></td></tr><tr><td data-num="19"></td><td><pre>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>the-content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="20"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>My Cool Blog<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="21"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="22"></td><td><pre>      Thanks for stopping by!</pre></td></tr><tr><td data-num="23"></td><td><pre></pre></td></tr><tr><td data-num="24"></td><td><pre>      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/about<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Click Here to find out more about me.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="25"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="26"></td><td><pre>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="27"></td><td><pre></pre></td></tr><tr><td data-num="28"></td><td><pre>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>aside</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>the-sidebar<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="29"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span>Recent Posts<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="30"></td><td><pre>    <span class="token comment">&lt;!-- sidebar content --></span></pre></td></tr><tr><td data-num="31"></td><td><pre>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>aside</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="32"></td><td><pre></pre></td></tr><tr><td data-num="33"></td><td><pre>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>the-footer<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="34"></td><td><pre>    <span class="token entity named-entity" title="&copy;">&amp;copy;</span> My Cool Blog</pre></td></tr><tr><td data-num="35"></td><td><pre>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="36"></td><td><pre></pre></td></tr><tr><td data-num="37"></td><td><pre>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>onDomReadystuff.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="38"></td><td><pre>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"></pre></td></tr><tr><td data-num="39"></td><td><pre>    <span class="token comment">// analytics</span></pre></td></tr><tr><td data-num="40"></td><td><pre>  </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="41"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="42"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><p>We want Pjax to intercept the URL  <code>/about</code> , and replace  <code>.the-content</code>  with the resulting content of the request.</p>
-<p>It would also be nice if we could replace the  <code>&lt;nav&gt;</code>  to show that the  <code>/about</code>  link is active, as well as update our page meta and the  <code>&lt;aside&gt;</code>  sidebar.</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;!-- metas, title, styles, etc --&gt;
+  &lt;title&gt;My Cool Blog&lt;/title&gt;
+  &lt;meta name=&quot;description&quot; content=&quot;Welcome to My Cool Blog&quot;&gt;
+  &lt;link href=&quot;/styles.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;header class=&quot;the-header&quot;&gt;
+    &lt;nav&gt;
+      &lt;a href=&quot;/&quot; class=&quot;is-active&quot;&gt;Home&lt;/a&gt;
+      &lt;a href=&quot;/about&quot;&gt;About&lt;/a&gt;
+      &lt;a href=&quot;/contact&quot;&gt;Contact&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;section class=&quot;the-content&quot;&gt;
+    &lt;h1&gt;My Cool Blog&lt;/h1&gt;
+    &lt;p&gt;
+      Thanks for stopping by!
+
+      &lt;a href=&quot;/about&quot;&gt;Click Here to find out more about me.&lt;/a&gt;
+    &lt;/p&gt;
+  &lt;/section&gt;
+
+  &lt;aside class=&quot;the-sidebar&quot;&gt;
+    &lt;h3&gt;Recent Posts&lt;/h3&gt;
+    &lt;!-- sidebar content --&gt;
+  &lt;/aside&gt;
+
+  &lt;footer class=&quot;the-footer&quot;&gt;
+    &amp;copy; My Cool Blog
+  &lt;/footer&gt;
+
+  &lt;script src=&quot;onDomReadystuff.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    // analytics
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>We want Pjax to intercept the URL <code>/about</code>, and replace <code>.the-content</code> with the resulting content of the request.</p>
+<p>It would also be nice if we could replace the <code>&lt;nav&gt;</code> to show that the <code>/about</code> link is active, as well as update our page meta and the <code>&lt;aside&gt;</code> sidebar.</p>
 <p>So all in all we want to update the page title and meta, header, content area, and sidebar, <strong>without reloading styles or scripts</strong>.</p>
-<p>We can easily do this by telling Pjax to listen on all  <code>a</code>  tags (which is the default) and use CSS selectors defined above (without forgetting minimal meta):</p>
-<figure class="highlight javascript"><figcaption data-lang="javascript"><span>t</span></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">var</span> pjax <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Pjax</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>  selectors<span class="token operator">:</span> <span class="token punctuation">[</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token string">"title"</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token string">"meta[name=description]"</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token string">".the-header"</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token string">".the-content"</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token string">".the-sidebar"</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="8"></td><td><pre>  <span class="token punctuation">]</span></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span></pre></td></tr></table></figure><p>Now, when someone in a Pjax-compatible browser clicks an internal link on the page, the content of each of the selectors will be replaced with the specific content pieces found in the next page’s content.</p>
+<p>We can easily do this by telling Pjax to listen on all <code>a</code> tags (which is the default) and use CSS selectors defined above (without forgetting minimal meta):</p>
+<pre><code class="javascript">var pjax = new Pjax({
+  selectors: [
+    &quot;title&quot;,
+    &quot;meta[name=description]&quot;,
+    &quot;.the-header&quot;,
+    &quot;.the-content&quot;,
+    &quot;.the-sidebar&quot;,
+  ]
+})
+</code></pre>
+<p>Now, when someone in a Pjax-compatible browser clicks an internal link on the page, the content of each of the selectors will be replaced with the specific content pieces found in the next page’s content.</p>
 <p><em>Magic! For real!</em> <strong>There is no need to do anything server-side!</strong></p>
-<h2 id="differences-with-jquery-pjax"><a class="markdownIt-Anchor" href="#differences-with-jquery-pjax">#</a> Differences with <a href="https://github.com/defunkt/jquery-pjax" target="_blank" rel="noopener">jQuery-pjax</a></h2>
-<ul>
+<h2 id="Differences-with-jQuery-pjax"><a href="#Differences-with-jQuery-pjax" class="headerlink" title="Differences with jQuery-pjax"></a>Differences with <a href="https://github.com/defunkt/jquery-pjax" target="_blank" rel="noopener">jQuery-pjax</a></h2><ul>
 <li>No jQuery dependency.</li>
 <li>Not limited to a container.</li>
 <li>No server-side requirements.</li>
@@ -98,154 +165,396 @@ you just need to designate which elements on your page that you want to be repla
 <li>Allows page transitions with CSS animations.</li>
 <li>Can be easily tweaked, since every method is public (and as a result, overridable).</li>
 </ul>
-<h2 id="compatibility"><a class="markdownIt-Anchor" href="#compatibility">#</a> Compatibility</h2>
-<p>Pjax only works with <a href="http://caniuse.com/#search=pushstate" target="_blank" rel="noopener">browsers that support the  <code>history.pushState()</code>  API</a>. When the API isn’t supported, Pjax goes into fallback mode (and it just does nothing).</p>
-<p>To see if Pjax is actually supported by your browser, use  <code>Pjax.isSupported()</code> .</p>
-<h2 id="usage"><a class="markdownIt-Anchor" href="#usage">#</a> Usage</h2>
-<h3 id="new-pjax"><a class="markdownIt-Anchor" href="#new-pjax">#</a>  <code>new Pjax()</code></h3>
-<p>Let’s talk more about the most basic way to get started.</p>
-<p>When instantiating  <code>Pjax</code> , you can pass options into the constructor as an object:</p>
-<figure class="highlight js"><figcaption data-lang="JavaScript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">var</span> pjax <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Pjax</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>  elements<span class="token operator">:</span> <span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token comment">// default is "a[href], form[action]"</span></pre></td></tr><tr><td data-num="3"></td><td><pre>  selectors<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"title"</span><span class="token punctuation">,</span> <span class="token string">".the-header"</span><span class="token punctuation">,</span> <span class="token string">".the-content"</span><span class="token punctuation">,</span> <span class="token string">".the-sidebar"</span><span class="token punctuation">]</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span></pre></td></tr></table></figure><p>This will enable Pjax on all links, and designate the part to replace using CSS selectors  <code>&quot;title&quot;, &quot;.the-header&quot;, &quot;.the-content&quot;, &quot;.the-sidebar&quot;</code> .</p>
+<h2 id="Compatibility"><a href="#Compatibility" class="headerlink" title="Compatibility"></a>Compatibility</h2><p>Pjax only works with <a href="http://caniuse.com/#search=pushstate" target="_blank" rel="noopener">browsers that support the <code>history.pushState()</code> API</a>. When the API isn’t supported, Pjax goes into fallback mode (and it just does nothing).</p>
+<p>To see if Pjax is actually supported by your browser, use <code>Pjax.isSupported()</code>.</p>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><h3 id="new-Pjax"><a href="#new-Pjax" class="headerlink" title="new Pjax()"></a><code>new Pjax()</code></h3><p>Let’s talk more about the most basic way to get started.</p>
+<p>When instantiating <code>Pjax</code>, you can pass options into the constructor as an object:</p>
+<pre><code class="js">var pjax = new Pjax({
+  elements: &quot;a&quot;, // default is &quot;a[href], form[action]&quot;
+  selectors: [&quot;title&quot;, &quot;.the-header&quot;, &quot;.the-content&quot;, &quot;.the-sidebar&quot;]
+})
+</code></pre>
+<p>This will enable Pjax on all links, and designate the part to replace using CSS selectors <code>&quot;title&quot;, &quot;.the-header&quot;, &quot;.the-content&quot;, &quot;.the-sidebar&quot;</code>.</p>
 <p>In some cases, you might want to only target some specific elements to apply Pjax behavior. In that case, you can do two different things:</p>
 <ol>
-<li>Use a custom CSS selector( such as  <code>&quot;a.js-Pjax&quot;</code>  or  <code>&quot;.js-Pjax a&quot;</code> , etc).</li>
-<li>Override  <code>Pjax.prototype.getElements</code> .
-<ul>
-<li><strong>Note</strong>: If doing this, make sure to return a  <code>NodeList</code> .</li>
+<li>Use a custom CSS selector( such as <code>&quot;a.js-Pjax&quot;</code> or <code>&quot;.js-Pjax a&quot;</code>, etc).</li>
+<li>Override <code>Pjax.prototype.getElements</code>.<ul>
+<li><strong>Note</strong>: If doing this, make sure to return a <code>NodeList</code>.</li>
 </ul>
 </li>
 </ol>
-<figure class="highlight js"><figcaption data-lang="JavaScript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">// use case 1</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">var</span> pjax <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Pjax</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> elements<span class="token operator">:</span> <span class="token string">"a.js-Pjax"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span></pre></td></tr></table></figure><figure class="highlight js"><figcaption data-lang="JavaScript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">// use case 2</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token class-name">Pjax</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">getElements</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>  <span class="token keyword">return</span> document<span class="token punctuation">.</span><span class="token function">getElementsByClassName</span><span class="token punctuation">(</span><span class="token string">".js-Pjax"</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="5"></td><td><pre></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token keyword">var</span> pjax <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Pjax</span><span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr></table></figure><h3 id="loadurlhref-options"><a class="markdownIt-Anchor" href="#loadurlhref-options">#</a>  <code>loadUrl(href, [options])</code></h3>
-<p>With this method, you can manually trigger the loading of a URL:</p>
-<figure class="highlight js"><figcaption data-lang="JavaScript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">var</span> pjax <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Pjax</span><span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token comment">// use case 1</span></pre></td></tr><tr><td data-num="4"></td><td><pre>pjax<span class="token punctuation">.</span><span class="token function">loadUrl</span><span class="token punctuation">(</span><span class="token string">"/your-url"</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="5"></td><td><pre></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token comment">// use case 2 (with options override)</span></pre></td></tr><tr><td data-num="7"></td><td><pre>pjax<span class="token punctuation">.</span><span class="token function">loadUrl</span><span class="token punctuation">(</span><span class="token string">"/your-other-url"</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> timeout<span class="token operator">:</span> <span class="token number">10</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span></pre></td></tr></table></figure><h3 id="handleresponseresponsetext-request-href-options"><a class="markdownIt-Anchor" href="#handleresponseresponsetext-request-href-options">#</a>  <code>handleResponse(responseText, request, href, options)</code></h3>
-<p>This method takes the raw response, processes the URL, then calls  <code>pjax.loadContent()</code>  to actually load it into the DOM.</p>
+<pre><code class="js">// use case 1
+var pjax = new Pjax({ elements: &quot;a.js-Pjax&quot; })
+</code></pre>
+<pre><code class="js">// use case 2
+Pjax.prototype.getElements = function() {
+  return document.getElementsByClassName(&quot;.js-Pjax&quot;)
+}
+
+var pjax = new Pjax()
+</code></pre>
+<h3 id="loadUrl-href-options"><a href="#loadUrl-href-options" class="headerlink" title="loadUrl(href, [options])"></a><code>loadUrl(href, [options])</code></h3><p>With this method, you can manually trigger the loading of a URL:</p>
+<pre><code class="js">var pjax = new Pjax()
+
+// use case 1
+pjax.loadUrl(&quot;/your-url&quot;)
+
+// use case 2 (with options override)
+pjax.loadUrl(&quot;/your-other-url&quot;, { timeout: 10 })
+</code></pre>
+<h3 id="handleResponse-responseText-request-href-options"><a href="#handleResponse-responseText-request-href-options" class="headerlink" title="handleResponse(responseText, request, href, options)"></a><code>handleResponse(responseText, request, href, options)</code></h3><p>This method takes the raw response, processes the URL, then calls <code>pjax.loadContent()</code> to actually load it into the DOM.</p>
 <p>It is passed the following arguments:</p>
 <ul>
-<li><strong>responseText</strong> (string): This is the raw response text. This is equivalent to  <code>request.responseText</code> .</li>
+<li><strong>responseText</strong> (string): This is the raw response text. This is equivalent to <code>request.responseText</code>.</li>
 <li><strong>request</strong> (XMLHttpRequest): This is the XHR object.</li>
-<li><strong>href</strong> (string): This is the URL that was passed to  <code>loadUrl()</code> .</li>
+<li><strong>href</strong> (string): This is the URL that was passed to <code>loadUrl()</code>.</li>
 <li><strong>options</strong> (object): This is an object with the options for this request. The structure basically matches the regular options object, with a few extra internal properties.</li>
 </ul>
 <p>You can override this if you want to process the data before, or instead of, it being loaded into the DOM.</p>
 <p>For example, if you want to check for a non-HTML response, you could do the following:</p>
-<figure class="highlight js"><figcaption data-lang="JavaScript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">var</span> pjax <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Pjax</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>pjax<span class="token punctuation">.</span>_handleResponse <span class="token operator">=</span> pjax<span class="token punctuation">.</span>handleResponse<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre>pjax<span class="token punctuation">.</span><span class="token function-variable function">handleResponse</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">responseText<span class="token punctuation">,</span> request<span class="token punctuation">,</span> href<span class="token punctuation">,</span> options</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>  <span class="token keyword">if</span> <span class="token punctuation">(</span>request<span class="token punctuation">.</span>responseText<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token string">"&lt;html"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    pjax<span class="token punctuation">.</span><span class="token function">_handleResponse</span><span class="token punctuation">(</span>responseText<span class="token punctuation">,</span> request<span class="token punctuation">,</span> href<span class="token punctuation">,</span> options<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>  <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token comment">// handle non-HTML response here</span></pre></td></tr><tr><td data-num="10"></td><td><pre>  <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><h3 id="refreshel"><a class="markdownIt-Anchor" href="#refreshel">#</a>  <code>refresh([el])</code></h3>
-<p>Use this method to bind Pjax to children of a DOM element that didn’t exist when Pjax was initialised e.g. content inserted dynamically by another library or script. If called with no arguments, Pjax will parse the entire document again to look for newly-inserted elements.</p>
-<figure class="highlight js"><figcaption data-lang="JavaScript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">// Inside a callback or Promise that runs after new DOM content has been inserted</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">var</span> newContent <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">".new-content"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre>pjax<span class="token punctuation">.</span><span class="token function">refresh</span><span class="token punctuation">(</span>newContent<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr></table></figure><h3 id="reload"><a class="markdownIt-Anchor" href="#reload">#</a>  <code>reload()</code></h3>
-<p>A helper shortcut for  <code>window.location.reload()</code> . Used to force a page reload.</p>
-<figure class="highlight js"><figcaption data-lang="JavaScript"></figcaption><table><tr><td data-num="1"></td><td><pre>pjax<span class="token punctuation">.</span><span class="token function">reload</span><span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr></table></figure><h2 id="options"><a class="markdownIt-Anchor" href="#options">#</a> Options</h2>
-<h3 id="elements-string-default-ahref-formaction"><a class="markdownIt-Anchor" href="#elements-string-default-ahref-formaction">#</a>  <code>elements</code>  (String, default:  <code>&quot;a[href], form[action]&quot;</code> )</h3>
-<p>CSS selector(s) used to find links to apply Pjax to. If needing multiple specific selectors, separate them by a comma.</p>
-<figure class="highlight js"><figcaption data-lang="JavaScript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">// Single element</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">var</span> pjax <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Pjax</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>  elements<span class="token operator">:</span> <span class="token string">".ajax"</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span></pre></td></tr></table></figure><figure class="highlight js"><figcaption data-lang="JavaScript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">// Multiple elements</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">var</span> pjax <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Pjax</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre>  elements<span class="token operator">:</span> <span class="token string">".pjax, .ajax"</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span></pre></td></tr></table></figure><h3 id="selectors-array-default-title-js-pjax"><a class="markdownIt-Anchor" href="#selectors-array-default-title-js-pjax">#</a>  <code>selectors</code>  (Array, default:  <code>[&quot;title&quot;, &quot;.js-Pjax&quot;]</code> )</h3>
-<p>CSS selectors used to find which content to replace.</p>
-<figure class="highlight js"><figcaption data-lang="JavaScript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">var</span> pjax <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Pjax</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>  selectors<span class="token operator">:</span> <span class="token punctuation">[</span></pre></td></tr><tr><td data-num="3"></td><td><pre>    <span class="token string">"title"</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token string">"the-content"</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="5"></td><td><pre>  <span class="token punctuation">]</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span></pre></td></tr></table></figure><p>If a query returns multiples items, it will just keep the index.</p>
+<pre><code class="js">var pjax = new Pjax();
+
+pjax._handleResponse = pjax.handleResponse;
+
+pjax.handleResponse = function(responseText, request, href, options) {
+  if (request.responseText.match(&quot;&lt;html&quot;)) {
+    pjax._handleResponse(responseText, request, href, options);
+  } else {
+    // handle non-HTML response here
+  }
+}
+</code></pre>
+<h3 id="refresh-el"><a href="#refresh-el" class="headerlink" title="refresh([el])"></a><code>refresh([el])</code></h3><p>Use this method to bind Pjax to children of a DOM element that didn’t exist when Pjax was initialised e.g. content inserted dynamically by another library or script. If called with no arguments, Pjax will parse the entire document again to look for newly-inserted elements.</p>
+<pre><code class="js">// Inside a callback or Promise that runs after new DOM content has been inserted
+var newContent = document.querySelector(&quot;.new-content&quot;);
+
+pjax.refresh(newContent);
+</code></pre>
+<h3 id="reload"><a href="#reload" class="headerlink" title="reload()"></a><code>reload()</code></h3><p>A helper shortcut for <code>window.location.reload()</code>. Used to force a page reload.</p>
+<pre><code class="js">pjax.reload()
+</code></pre>
+<h2 id="Options"><a href="#Options" class="headerlink" title="Options"></a>Options</h2><h3 id="elements-String-default-quot-a-href-form-action-quot"><a href="#elements-String-default-quot-a-href-form-action-quot" class="headerlink" title="elements (String, default: &quot;a[href], form[action]&quot;)"></a><code>elements</code> (String, default: <code>&quot;a[href], form[action]&quot;</code>)</h3><p>CSS selector(s) used to find links to apply Pjax to. If needing multiple specific selectors, separate them by a comma.</p>
+<pre><code class="js">// Single element
+var pjax = new Pjax({
+  elements: &quot;.ajax&quot;
+})
+</code></pre>
+<pre><code class="js">// Multiple elements
+var pjax = new Pjax({
+  elements: &quot;.pjax, .ajax&quot;,
+})
+</code></pre>
+<h3 id="selectors-Array-default-quot-title-quot-quot-js-Pjax-quot"><a href="#selectors-Array-default-quot-title-quot-quot-js-Pjax-quot" class="headerlink" title="selectors (Array, default: [&quot;title&quot;, &quot;.js-Pjax&quot;])"></a><code>selectors</code> (Array, default: <code>[&quot;title&quot;, &quot;.js-Pjax&quot;]</code>)</h3><p>CSS selectors used to find which content to replace.</p>
+<pre><code class="js">var pjax = new Pjax({
+  selectors: [
+    &quot;title&quot;,
+    &quot;the-content&quot;,
+  ]
+})
+</code></pre>
+<p>If a query returns multiples items, it will just keep the index.</p>
 <p>Example of what you can do:</p>
-<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="4"></td><td><pre>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Page title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="7"></td><td><pre>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>js-Pjax<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="8"></td><td><pre>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>js-Pjax<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="9"></td><td><pre>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>the-footer<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="10"></td><td><pre>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"><span class="token operator">...</span></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="11"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><p>This example is correct and should work “as expected”.</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Page title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header class=&quot;js-Pjax&quot;&gt;...&lt;/header&gt;
+  &lt;section class=&quot;js-Pjax&quot;&gt;...&lt;/section&gt;
+  &lt;footer class=&quot;the-footer&quot;&gt;...&lt;/footer&gt;
+  &lt;script&gt;...&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>This example is correct and should work “as expected”.</p>
 <p><strong>NOTE:</strong> <em>If the current page and new page do not have the same amount of DOM elements, Pjax will fall back to normal page load.</em></p>
-<h3 id="switches-object-default"><a class="markdownIt-Anchor" href="#switches-object-default">#</a>  <code>switches</code>  (Object, default:  <code>{}</code> )</h3>
-<p>This is an object containing callbacks that can be used to switch old elements with new elements.</p>
-<p>The object keys should be one of the defined selectors (from the  <code>selectors</code>  option).</p>
+<h3 id="switches-Object-default"><a href="#switches-Object-default" class="headerlink" title="switches (Object, default: {})"></a><code>switches</code> (Object, default: <code>{}</code>)</h3><p>This is an object containing callbacks that can be used to switch old elements with new elements.</p>
+<p>The object keys should be one of the defined selectors (from the <code>selectors</code> option).</p>
 <p>Examples:</p>
-<figure class="highlight js"><figcaption data-lang="JavaScript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">var</span> pjax <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Pjax</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>  selectors<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"title"</span><span class="token punctuation">,</span> <span class="token string">".Navbar"</span><span class="token punctuation">,</span> <span class="token string">".js-Pjax"</span><span class="token punctuation">]</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="3"></td><td><pre>  switches<span class="token operator">:</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token string">"title"</span><span class="token operator">:</span> Pjax<span class="token punctuation">.</span>switches<span class="token punctuation">.</span>outerHTML<span class="token punctuation">,</span> <span class="token comment">// default behavior</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token string">".the-content"</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">oldEl<span class="token punctuation">,</span> newEl<span class="token punctuation">,</span> options</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>      <span class="token comment">// this is identical to the default behavior</span></pre></td></tr><tr><td data-num="7"></td><td><pre>      oldEl<span class="token punctuation">.</span>outerHTML <span class="token operator">=</span> newEl<span class="token punctuation">.</span>outerHTML</pre></td></tr><tr><td data-num="8"></td><td><pre>      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">onSwitch</span><span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token string">".js-Pjax"</span><span class="token operator">:</span> Pjax<span class="token punctuation">.</span>switches<span class="token punctuation">.</span>sideBySide</pre></td></tr><tr><td data-num="11"></td><td><pre>  <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span></pre></td></tr></table></figure><p>Callbacks are bound to the Pjax instance itself to allow you to reuse it (ex:  <code>this.onSwitch()</code> )</p>
-<h3 id="existing-switch-callbacks"><a class="markdownIt-Anchor" href="#existing-switch-callbacks">#</a> Existing Switch Callbacks</h3>
-<ul>
-<li><code>Pjax.switches.outerHTML</code> :<br>
-The default behavior, replaces elements using  <code>outerHTML</code> .</li>
-<li><code>Pjax.switches.innerHTML</code> :<br>
-Replaces elements using  <code>innerHTML</code>  and copies  <code>className</code> .</li>
-<li><code>Pjax.switches.replaceNode</code> :<br>
-Replaces elements using  <code>replaceChild</code></li>
-<li><code>Pjax.switches.sideBySide</code> :<br>
-Smart replacing that allows you to have both elements in the same parent when you want to use CSS animations. Old elements are removed when all children have been fully animated (an <a href="http://www.w3.org/TR/css3-animations/#animationend" target="_blank" rel="noopener">animationEnd</a> event is triggered).</li>
+<pre><code class="js">var pjax = new Pjax({
+  selectors: [&quot;title&quot;, &quot;.Navbar&quot;, &quot;.js-Pjax&quot;],
+  switches: {
+    &quot;title&quot;: Pjax.switches.outerHTML, // default behavior
+    &quot;.the-content&quot;: function(oldEl, newEl, options) {
+      // this is identical to the default behavior
+      oldEl.outerHTML = newEl.outerHTML
+      this.onSwitch()
+    },
+    &quot;.js-Pjax&quot;: Pjax.switches.sideBySide
+  }
+})
+</code></pre>
+<p>Callbacks are bound to the Pjax instance itself to allow you to reuse it (ex: <code>this.onSwitch()</code>)</p>
+<h3 id="Existing-Switch-Callbacks"><a href="#Existing-Switch-Callbacks" class="headerlink" title="Existing Switch Callbacks"></a>Existing Switch Callbacks</h3><ul>
+<li><code>Pjax.switches.outerHTML</code>:<br>The default behavior, replaces elements using <code>outerHTML</code>.</li>
+<li><code>Pjax.switches.innerHTML</code>:<br>Replaces elements using <code>innerHTML</code> and copies <code>className</code>.</li>
+<li><code>Pjax.switches.replaceNode</code>:<br>Replaces elements using <code>replaceChild</code></li>
+<li><code>Pjax.switches.sideBySide</code>:<br>Smart replacing that allows you to have both elements in the same parent when you want to use CSS animations. Old elements are removed when all children have been fully animated (an <a href="http://www.w3.org/TR/css3-animations/#animationend" target="_blank" rel="noopener">animationEnd</a> event is triggered).</li>
 </ul>
-<h3 id="creating-a-switch-callback"><a class="markdownIt-Anchor" href="#creating-a-switch-callback">#</a> Creating a Switch Callback</h3>
-<p>Your callback function can do whatever you want, but you need to:</p>
+<h3 id="Creating-a-Switch-Callback"><a href="#Creating-a-Switch-Callback" class="headerlink" title="Creating a Switch Callback"></a>Creating a Switch Callback</h3><p>Your callback function can do whatever you want, but you need to:</p>
 <ol>
-<li>Replace the  <code>oldEl</code> 's content with the  <code>newEl</code> 's content in some fashion.</li>
-<li>Call  <code>this.onSwitch()</code>  to trigger the attached callback.</li>
+<li>Replace the <code>oldEl</code>‘s content with the <code>newEl</code>‘s content in some fashion.</li>
+<li>Call <code>this.onSwitch()</code> to trigger the attached callback.</li>
 </ol>
 <p>Here is the default behavior as an example:</p>
-<figure class="highlight js"><figcaption data-lang="JavaScript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">oldEl<span class="token punctuation">,</span> newEl<span class="token punctuation">,</span> pjaxOptions</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>  oldEl<span class="token punctuation">.</span>outerHTML <span class="token operator">=</span> newEl<span class="token punctuation">.</span>outerHTML</pre></td></tr><tr><td data-num="3"></td><td><pre>  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">onSwitch</span><span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><h3 id="switchesoptions-object-default"><a class="markdownIt-Anchor" href="#switchesoptions-object-default">#</a>  <code>switchesOptions</code>  (Object, default:  <code>{}</code> )</h3>
-<p>These are options that can be used during content replacement by switches. For now, only  <code>Pjax.switches.sideBySide</code>  uses it. This is very convenient when you use something like <a href="https://github.com/daneden/animate.css" target="_blank" rel="noopener">Animate.css</a> with or without <a href="https://github.com/matthieua/WOW" target="_blank" rel="noopener">WOW.js</a>.</p>
-<figure class="highlight js"><figcaption data-lang="JavaScript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">var</span> pjax <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Pjax</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>  selectors<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"title"</span><span class="token punctuation">,</span> <span class="token string">".js-Pjax"</span><span class="token punctuation">]</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="3"></td><td><pre>  switches<span class="token operator">:</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token string">".js-Pjax"</span><span class="token operator">:</span> Pjax<span class="token punctuation">.</span>switches<span class="token punctuation">.</span>sideBySide</pre></td></tr><tr><td data-num="5"></td><td><pre>  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="6"></td><td><pre>  switchesOptions<span class="token operator">:</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token string">".js-Pjax"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>      classNames<span class="token operator">:</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>        <span class="token comment">// class added to the old element being replaced, e.g. a fade out</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        remove<span class="token operator">:</span> <span class="token string">"Animated Animated--reverse Animate--fast Animate--noDelay"</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="11"></td><td><pre>        <span class="token comment">// class added to the new element that is replacing the old one, e.g. a fade in</span></pre></td></tr><tr><td data-num="12"></td><td><pre>        add<span class="token operator">:</span> <span class="token string">"Animated"</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="13"></td><td><pre>        <span class="token comment">// class added on the element when navigating back</span></pre></td></tr><tr><td data-num="14"></td><td><pre>        backward<span class="token operator">:</span> <span class="token string">"Animate--slideInRight"</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="15"></td><td><pre>        <span class="token comment">// class added on the element when navigating forward (used for new page too)</span></pre></td></tr><tr><td data-num="16"></td><td><pre>        forward<span class="token operator">:</span> <span class="token string">"Animate--slideInLeft"</span></pre></td></tr><tr><td data-num="17"></td><td><pre>      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="18"></td><td><pre>      callbacks<span class="token operator">:</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="19"></td><td><pre>        <span class="token comment">// to make a nice transition with 2 pages at the same time</span></pre></td></tr><tr><td data-num="20"></td><td><pre>        <span class="token comment">// we are playing with absolute positioning for the element we are removing</span></pre></td></tr><tr><td data-num="21"></td><td><pre>        <span class="token comment">// &amp; we need live metrics to have something great</span></pre></td></tr><tr><td data-num="22"></td><td><pre>        <span class="token comment">// see associated CSS below</span></pre></td></tr><tr><td data-num="23"></td><td><pre>        <span class="token function-variable function">removeElement</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">el</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="24"></td><td><pre>          el<span class="token punctuation">.</span>style<span class="token punctuation">.</span>marginLeft <span class="token operator">=</span> <span class="token string">"-"</span> <span class="token operator">+</span> <span class="token punctuation">(</span>el<span class="token punctuation">.</span><span class="token function">getBoundingClientRect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>width<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"px"</span></pre></td></tr><tr><td data-num="25"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="26"></td><td><pre>      <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="27"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="28"></td><td><pre>  <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="29"></td><td><pre><span class="token punctuation">&#125;</span><span class="token punctuation">)</span></pre></td></tr></table></figure><p><em>Note that  <code>remove</code>  includes  <code>Animated--reverse</code>  which is a simple way to not have to have a duplicate transition (slideIn + reverse =&gt; slideOut).</em></p>
+<pre><code class="js">function(oldEl, newEl, pjaxOptions) {
+  oldEl.outerHTML = newEl.outerHTML
+  this.onSwitch()
+}
+</code></pre>
+<h3 id="switchesOptions-Object-default"><a href="#switchesOptions-Object-default" class="headerlink" title="switchesOptions (Object, default: {})"></a><code>switchesOptions</code> (Object, default: <code>{}</code>)</h3><p>These are options that can be used during content replacement by switches. For now, only <code>Pjax.switches.sideBySide</code> uses it. This is very convenient when you use something like <a href="https://github.com/daneden/animate.css" target="_blank" rel="noopener">Animate.css</a> with or without <a href="https://github.com/matthieua/WOW" target="_blank" rel="noopener">WOW.js</a>.</p>
+<pre><code class="js">var pjax = new Pjax({
+  selectors: [&quot;title&quot;, &quot;.js-Pjax&quot;],
+  switches: {
+    &quot;.js-Pjax&quot;: Pjax.switches.sideBySide
+  },
+  switchesOptions: {
+    &quot;.js-Pjax&quot;: {
+      classNames: {
+        // class added to the old element being replaced, e.g. a fade out
+        remove: &quot;Animated Animated--reverse Animate--fast Animate--noDelay&quot;,
+        // class added to the new element that is replacing the old one, e.g. a fade in
+        add: &quot;Animated&quot;,
+        // class added on the element when navigating back
+        backward: &quot;Animate--slideInRight&quot;,
+        // class added on the element when navigating forward (used for new page too)
+        forward: &quot;Animate--slideInLeft&quot;
+      },
+      callbacks: {
+        // to make a nice transition with 2 pages at the same time
+        // we are playing with absolute positioning for the element we are removing
+        // &amp; we need live metrics to have something great
+        // see associated CSS below
+        removeElement: function(el) {
+          el.style.marginLeft = &quot;-&quot; + (el.getBoundingClientRect().width/2) + &quot;px&quot;
+        }
+      }
+    }
+  }
+})
+</code></pre>
+<p><em>Note that <code>remove</code> includes <code>Animated--reverse</code> which is a simple way to not have to have a duplicate transition (slideIn + reverse =&gt; slideOut).</em></p>
 <p>Here is some css that works well with the above configuration:</p>
-<figure class="highlight css"><figcaption data-lang="CSS"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">/*</pre></td></tr><tr><td data-num="2"></td><td><pre>  Note: If your content elements don't have a fixed width it can cause</pre></td></tr><tr><td data-num="3"></td><td><pre>  an issue when positioning absolutely</pre></td></tr><tr><td data-num="4"></td><td><pre>*/</span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token selector">.js-Pjax</span> <span class="token punctuation">&#123;</span> <span class="token property">position</span><span class="token punctuation">:</span> relative <span class="token punctuation">&#125;</span> <span class="token comment">/* parent element where switch will be made */</span></pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token selector">.js-Pjax-child</span> <span class="token punctuation">&#123;</span> <span class="token property">width</span><span class="token punctuation">:</span> 100% <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre><span class="token comment">/* position for the elements that will be removed */</span></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token selector">.js-Pjax-remove</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="12"></td><td><pre>  <span class="token property">left</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>  <span class="token comment">/* transform: translateX(-50%) */</span></pre></td></tr><tr><td data-num="14"></td><td><pre>  <span class="token comment">/* transform can't be used since we already use generic translate for the remove effect (eg animate.css) */</span></pre></td></tr><tr><td data-num="15"></td><td><pre>  <span class="token comment">/* margin-left: -width/2; // made with js */</span></pre></td></tr><tr><td data-num="16"></td><td><pre>  <span class="token comment">/* you can totally drop the margin-left thing from switchesOptions if you use custom animations */</span></pre></td></tr><tr><td data-num="17"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="18"></td><td><pre></pre></td></tr><tr><td data-num="19"></td><td><pre><span class="token comment">/* CSS animations */</span></pre></td></tr><tr><td data-num="20"></td><td><pre><span class="token selector">.Animated</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="21"></td><td><pre>  <span class="token property">animation-fill-mode</span><span class="token punctuation">:</span> both<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="22"></td><td><pre>  <span class="token property">animation-duration</span><span class="token punctuation">:</span> 1s<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="23"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="24"></td><td><pre></pre></td></tr><tr><td data-num="25"></td><td><pre><span class="token selector">.Animated--reverse</span> <span class="token punctuation">&#123;</span> <span class="token property">animation-direction</span><span class="token punctuation">:</span> reverse <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="26"></td><td><pre></pre></td></tr><tr><td data-num="27"></td><td><pre><span class="token selector">.Animate--fast</span> <span class="token punctuation">&#123;</span> <span class="token property">animation-duration</span><span class="token punctuation">:</span> .5s <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="28"></td><td><pre><span class="token selector">.Animate--noDelay</span> <span class="token punctuation">&#123;</span> <span class="token property">animation-delay</span><span class="token punctuation">:</span> 0s <span class="token important">!important</span><span class="token punctuation">;</span>  <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="29"></td><td><pre></pre></td></tr><tr><td data-num="30"></td><td><pre><span class="token selector">.Animate--slideInRight</span> <span class="token punctuation">&#123;</span> <span class="token property">animation-name</span><span class="token punctuation">:</span> Animation-slideInRight <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="31"></td><td><pre></pre></td></tr><tr><td data-num="32"></td><td><pre><span class="token atrule"><span class="token rule">@keyframes</span> Animation-slideInRight</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="33"></td><td><pre>  <span class="token selector">0%</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="34"></td><td><pre>    <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="35"></td><td><pre>    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>100rem<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="36"></td><td><pre>  <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="37"></td><td><pre></pre></td></tr><tr><td data-num="38"></td><td><pre>  <span class="token selector">100%</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="39"></td><td><pre>    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>0<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="40"></td><td><pre>  <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="41"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="42"></td><td><pre></pre></td></tr><tr><td data-num="43"></td><td><pre><span class="token selector">.Animate--slideInLeft</span> <span class="token punctuation">&#123;</span> <span class="token property">animation-name</span><span class="token punctuation">:</span> Animation-slideInLeft <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="44"></td><td><pre></pre></td></tr><tr><td data-num="45"></td><td><pre><span class="token atrule"><span class="token rule">@keyframes</span> Animation-slideInLeft</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="46"></td><td><pre>  <span class="token selector">0%</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="47"></td><td><pre>    <span class="token property">opacity</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="48"></td><td><pre>    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>-100rem<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="49"></td><td><pre>  <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="50"></td><td><pre></pre></td></tr><tr><td data-num="51"></td><td><pre>  <span class="token selector">100%</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="52"></td><td><pre>    <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateX</span><span class="token punctuation">(</span>0<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="53"></td><td><pre>  <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="54"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p>To give context to this CSS, here is an HTML snippet:</p>
-<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token name">doctype</span> <span class="token name">html</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="4"></td><td><pre>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Page Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="7"></td><td><pre>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>js-Pjax<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="8"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>js-Pjax-child<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="9"></td><td><pre>      Your content here</pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="11"></td><td><pre>    <span class="token comment">&lt;!--</pre></td></tr><tr><td data-num="12"></td><td><pre>    During the replacement process, you'll have the following tree:</pre></td></tr><tr><td data-num="13"></td><td><pre></pre></td></tr><tr><td data-num="14"></td><td><pre>    &lt;div class="js-Pjax-child js-Pjax-remove Animate..."></pre></td></tr><tr><td data-num="15"></td><td><pre>      Your OLD content here</pre></td></tr><tr><td data-num="16"></td><td><pre>    &lt;/div></pre></td></tr><tr><td data-num="17"></td><td><pre>    &lt;div class="js-Pjax-child js-Pjax-add Animate..."></pre></td></tr><tr><td data-num="18"></td><td><pre>      Your NEW content here</pre></td></tr><tr><td data-num="19"></td><td><pre>    &lt;/div></pre></td></tr><tr><td data-num="20"></td><td><pre></pre></td></tr><tr><td data-num="21"></td><td><pre>    --></span></pre></td></tr><tr><td data-num="22"></td><td><pre>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="23"></td><td><pre>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"><span class="token operator">...</span></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="24"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="25"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><h3 id="history-boolean-default-true"><a class="markdownIt-Anchor" href="#history-boolean-default-true">#</a>  <code>history</code>  (Boolean, default:  <code>true</code> )</h3>
-<p>Enable the use of  <code>pushState()</code> . Disabling this will prevent Pjax from updating browser history. While possible, there is almost no use case where you would want to do this.</p>
-<p>Internally, this option is used when a  <code>popstate</code>  event triggers Pjax (to not  <code>pushState()</code>  again).</p>
-<h3 id="analytics-function-boolean-default-a-function-that-pushes-_gaq-_trackpageview-or-sends-ga-pageview"><a class="markdownIt-Anchor" href="#analytics-function-boolean-default-a-function-that-pushes-_gaq-_trackpageview-or-sends-ga-pageview">#</a>  <code>analytics</code>  (Function | Boolean, default: a function that pushes  <code>_gaq</code>   <code>_trackPageview</code>  or sends  <code>ga</code>   <code>pageview</code></h3>
-<p>Function that allows you to add behavior for analytics. By default it tries to track<br>
-a pageview with Google Analytics (if it exists on the page). It’s called every time a page is switched, even for history navigation.</p>
-<p>Set to  <code>false</code>  to disable this behavior.</p>
-<h3 id="scrollto-integer-integer-integer-false-default-0"><a class="markdownIt-Anchor" href="#scrollto-integer-integer-integer-false-default-0">#</a>  <code>scrollTo</code>  (Integer | [Integer, Integer] | False, default:  <code>0</code> )</h3>
-<p>When set to an integer, this is the value (in px from the top of the page) to scroll to when a page is switched.</p>
+<pre><code class="css">/*
+  Note: If your content elements don&#39;t have a fixed width it can cause
+  an issue when positioning absolutely
+*/
+.js-Pjax { position: relative } /* parent element where switch will be made */
+
+.js-Pjax-child { width: 100% }
+
+/* position for the elements that will be removed */
+.js-Pjax-remove {
+  position: absolute;
+  left: 50%;
+  /* transform: translateX(-50%) */
+  /* transform can&#39;t be used since we already use generic translate for the remove effect (eg animate.css) */
+  /* margin-left: -width/2; // made with js */
+  /* you can totally drop the margin-left thing from switchesOptions if you use custom animations */
+}
+
+/* CSS animations */
+.Animated {
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+
+.Animated--reverse { animation-direction: reverse }
+
+.Animate--fast { animation-duration: .5s }
+.Animate--noDelay { animation-delay: 0s !important;  }
+
+.Animate--slideInRight { animation-name: Animation-slideInRight }
+
+@keyframes Animation-slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100rem);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.Animate--slideInLeft { animation-name: Animation-slideInLeft }
+
+@keyframes Animation-slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100rem);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+</code></pre>
+<p>To give context to this CSS, here is an HTML snippet:</p>
+<pre><code class="html">&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;section class=&quot;js-Pjax&quot;&gt;
+    &lt;div class=&quot;js-Pjax-child&quot;&gt;
+      Your content here
+    &lt;/div&gt;
+    &lt;!--
+    During the replacement process, you&#39;ll have the following tree:
+
+    &lt;div class=&quot;js-Pjax-child js-Pjax-remove Animate...&quot;&gt;
+      Your OLD content here
+    &lt;/div&gt;
+    &lt;div class=&quot;js-Pjax-child js-Pjax-add Animate...&quot;&gt;
+      Your NEW content here
+    &lt;/div&gt;
+
+    --&gt;
+  &lt;/section&gt;
+  &lt;script&gt;...&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="history-Boolean-default-true"><a href="#history-Boolean-default-true" class="headerlink" title="history (Boolean, default: true)"></a><code>history</code> (Boolean, default: <code>true</code>)</h3><p>Enable the use of <code>pushState()</code>. Disabling this will prevent Pjax from updating browser history. While possible, there is almost no use case where you would want to do this.</p>
+<p>Internally, this option is used when a <code>popstate</code> event triggers Pjax (to not <code>pushState()</code> again).</p>
+<h3 id="analytics-Function-Boolean-default-a-function-that-pushes-gaq-trackPageview-or-sends-ga-pageview"><a href="#analytics-Function-Boolean-default-a-function-that-pushes-gaq-trackPageview-or-sends-ga-pageview" class="headerlink" title="analytics (Function | Boolean, default: a function that pushes _gaq _trackPageview or sends ga pageview"></a><code>analytics</code> (Function | Boolean, default: a function that pushes <code>_gaq</code> <code>_trackPageview</code> or sends <code>ga</code> <code>pageview</code></h3><p>Function that allows you to add behavior for analytics. By default it tries to track<br>a pageview with Google Analytics (if it exists on the page). It’s called every time a page is switched, even for history navigation.</p>
+<p>Set to <code>false</code> to disable this behavior.</p>
+<h3 id="scrollTo-Integer-Integer-Integer-False-default-0"><a href="#scrollTo-Integer-Integer-Integer-False-default-0" class="headerlink" title="scrollTo (Integer | [Integer, Integer] | False, default: 0)"></a><code>scrollTo</code> (Integer | [Integer, Integer] | False, default: <code>0</code>)</h3><p>When set to an integer, this is the value (in px from the top of the page) to scroll to when a page is switched.</p>
 <p>When set to an array of 2 integers ([x, y]), this is the value to scroll both horizontally and vertically.</p>
-<p>Set this to  <code>false</code>  to disable scrolling, which will mean the page will stay in that same position it was before loading the new elements.</p>
-<h3 id="scrollrestoration-boolean-default-true"><a class="markdownIt-Anchor" href="#scrollrestoration-boolean-default-true">#</a>  <code>scrollRestoration</code>  (Boolean, default:  <code>true</code> )</h3>
-<p>When set to  <code>true</code> , Pjax will attempt to restore the scroll position when navigating backwards or forwards.</p>
-<h3 id="cachebust-boolean-default-true"><a class="markdownIt-Anchor" href="#cachebust-boolean-default-true">#</a>  <code>cacheBust</code>  (Boolean, default:  <code>true</code> )</h3>
-<p>When set to  <code>true</code> , Pjax appends a timestamp query string segment to the requested URL in order to skip the browser cache.</p>
-<h3 id="debug-boolean-default-false"><a class="markdownIt-Anchor" href="#debug-boolean-default-false">#</a>  <code>debug</code>  (Boolean, default:  <code>false</code> )</h3>
-<p>Enables verbose mode. Useful to debug page layout differences.</p>
-<h3 id="currenturlfullreload-boolean-default-false"><a class="markdownIt-Anchor" href="#currenturlfullreload-boolean-default-false">#</a>  <code>currentUrlFullReload</code>  (Boolean, default:  <code>false</code> )</h3>
-<p>When set to  <code>true</code> , clicking on a link that points to the current URL will trigger a full page reload.</p>
-<p>When set to  <code>false</code> , clicking on such a link will cause Pjax to load the current page without a full page reload. If you want to add some custom behavior, add a click listener to the link and call  <code>preventDefault()</code> . This will prevent Pjax from receiving the event.</p>
-<p><strong>Note</strong>: This must be done before Pjax is instantiated, otherwise Pjax’s event handler will be called first, and  <code>preventDefault()</code>  won’t have been called yet.</p>
+<p>Set this to <code>false</code> to disable scrolling, which will mean the page will stay in that same position it was before loading the new elements.</p>
+<h3 id="scrollRestoration-Boolean-default-true"><a href="#scrollRestoration-Boolean-default-true" class="headerlink" title="scrollRestoration (Boolean, default: true)"></a><code>scrollRestoration</code> (Boolean, default: <code>true</code>)</h3><p>When set to <code>true</code>, Pjax will attempt to restore the scroll position when navigating backwards or forwards.</p>
+<h3 id="cacheBust-Boolean-default-true"><a href="#cacheBust-Boolean-default-true" class="headerlink" title="cacheBust (Boolean, default: true)"></a><code>cacheBust</code> (Boolean, default: <code>true</code>)</h3><p>When set to <code>true</code>, Pjax appends a timestamp query string segment to the requested URL in order to skip the browser cache.</p>
+<h3 id="debug-Boolean-default-false"><a href="#debug-Boolean-default-false" class="headerlink" title="debug (Boolean, default: false)"></a><code>debug</code> (Boolean, default: <code>false</code>)</h3><p>Enables verbose mode. Useful to debug page layout differences.</p>
+<h3 id="currentUrlFullReload-Boolean-default-false"><a href="#currentUrlFullReload-Boolean-default-false" class="headerlink" title="currentUrlFullReload (Boolean, default: false)"></a><code>currentUrlFullReload</code> (Boolean, default: <code>false</code>)</h3><p>When set to <code>true</code>, clicking on a link that points to the current URL will trigger a full page reload.</p>
+<p>When set to <code>false</code>, clicking on such a link will cause Pjax to load the current page without a full page reload. If you want to add some custom behavior, add a click listener to the link and call <code>preventDefault()</code>. This will prevent Pjax from receiving the event.</p>
+<p><strong>Note</strong>: This must be done before Pjax is instantiated, otherwise Pjax’s event handler will be called first, and <code>preventDefault()</code> won’t have been called yet.</p>
 <p>Here is some sample code:</p>
-<figure class="highlight js"><figcaption data-lang="JavaScript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">var</span> links <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">".js-Pjax"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre>  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> links<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token keyword">var</span> el <span class="token operator">=</span> links<span class="token punctuation">[</span>i<span class="token punctuation">]</span></pre></td></tr><tr><td data-num="5"></td><td><pre></pre></td></tr><tr><td data-num="6"></td><td><pre>    el<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>      <span class="token keyword">if</span> <span class="token punctuation">(</span>el<span class="token punctuation">.</span>href <span class="token operator">===</span> window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">"#"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>        e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre></pre></td></tr><tr><td data-num="10"></td><td><pre>        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Link to current page clicked"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>        <span class="token comment">// Custom code goes here.</span></pre></td></tr><tr><td data-num="12"></td><td><pre>      <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="14"></td><td><pre>  <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="15"></td><td><pre></pre></td></tr><tr><td data-num="16"></td><td><pre>  <span class="token keyword">var</span> pjax <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Pjax</span><span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr></table></figure><p>(Note that if  <code>cacheBust</code>  is set to  <code>true</code> , the code that checks if the href is the same as the current page’s URL will not work, due to the query string appended to force a cache bust).</p>
-<h3 id="timeout-integer-default-0"><a class="markdownIt-Anchor" href="#timeout-integer-default-0">#</a>  <code>timeout</code>  (Integer, default:  <code>0</code> )</h3>
-<p>The timeout in <em>milliseconds</em> for the XHR requests. Set to  <code>0</code>  to disable the timeout.</p>
-<h2 id="events"><a class="markdownIt-Anchor" href="#events">#</a> Events</h2>
-<p>Pjax fires a number of events regardless of how it’s invoked.</p>
+<pre><code class="js">  var links = document.querySelectorAll(&quot;.js-Pjax&quot;);
+
+  for (var i = 0; i &lt; links.length; i++) {
+    var el = links[i]
+
+    el.addEventListener(&quot;click&quot;, function(e) {
+      if (el.href === window.location.href.split(&quot;#&quot;)[0]) {
+        e.preventDefault();
+
+        console.log(&quot;Link to current page clicked&quot;);
+        // Custom code goes here.
+      }
+    })
+  }
+
+  var pjax = new Pjax()
+</code></pre>
+<p>(Note that if <code>cacheBust</code> is set to <code>true</code>, the code that checks if the href is the same as the current page’s URL will not work, due to the query string appended to force a cache bust).</p>
+<h3 id="timeout-Integer-default-0"><a href="#timeout-Integer-default-0" class="headerlink" title="timeout (Integer, default: 0)"></a><code>timeout</code> (Integer, default: <code>0</code>)</h3><p>The timeout in <em>milliseconds</em> for the XHR requests. Set to <code>0</code> to disable the timeout.</p>
+<h2 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h2><p>Pjax fires a number of events regardless of how it’s invoked.</p>
 <p>All events are fired from the <em>document</em>, not the link that was clicked.</p>
 <ul>
-<li><code>pjax:send</code>  - Fired after the Pjax request begins.</li>
-<li><code>pjax:complete</code>  - Fired after the Pjax request finishes.</li>
-<li><code>pjax:success</code>  - Fired after the Pjax request succeeds.</li>
-<li><code>pjax:error</code>  - Fired after the Pjax request fails. The request object will be passed along as  <code>event.options.request</code> .</li>
+<li><code>pjax:send</code> - Fired after the Pjax request begins.</li>
+<li><code>pjax:complete</code> - Fired after the Pjax request finishes.</li>
+<li><code>pjax:success</code> - Fired after the Pjax request succeeds.</li>
+<li><code>pjax:error</code> - Fired after the Pjax request fails. The request object will be passed along as <code>event.options.request</code>.</li>
 </ul>
-<p><code>send</code>  and  <code>complete</code>  are a good pair of events to use if you are implementing a loading indicator (eg: <a href="http://buunguyen.github.io/topbar/" target="_blank" rel="noopener">topbar</a>)</p>
-<figure class="highlight js"><figcaption data-lang="JavaScript"></figcaption><table><tr><td data-num="1"></td><td><pre>document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'pjax:send'</span><span class="token punctuation">,</span> topbar<span class="token punctuation">.</span>show<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="2"></td><td><pre>document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'pjax:complete'</span><span class="token punctuation">,</span> topbar<span class="token punctuation">.</span>hide<span class="token punctuation">)</span></pre></td></tr></table></figure><h2 id="http-headers"><a class="markdownIt-Anchor" href="#http-headers">#</a> HTTP Headers</h2>
-<p>Pjax uses several custom headers when it makes and receives HTTP requests. If the requests are going to your server, you can use those headers for some meta information about the response.</p>
-<h3 id="request-headers"><a class="markdownIt-Anchor" href="#request-headers">#</a> Request Headers</h3>
-<p>Pjax sends the following headers with every request:</p>
+<p><code>send</code> and <code>complete</code> are a good pair of events to use if you are implementing a loading indicator (eg: <a href="http://buunguyen.github.io/topbar/" target="_blank" rel="noopener">topbar</a>)</p>
+<pre><code class="js">document.addEventListener(&#39;pjax:send&#39;, topbar.show)
+document.addEventListener(&#39;pjax:complete&#39;, topbar.hide)
+</code></pre>
+<h2 id="HTTP-Headers"><a href="#HTTP-Headers" class="headerlink" title="HTTP Headers"></a>HTTP Headers</h2><p>Pjax uses several custom headers when it makes and receives HTTP requests. If the requests are going to your server, you can use those headers for some meta information about the response.</p>
+<h3 id="Request-Headers"><a href="#Request-Headers" class="headerlink" title="Request Headers"></a>Request Headers</h3><p>Pjax sends the following headers with every request:</p>
 <ul>
 <li><code>X-Requested-With: &quot;XMLHttpRequest&quot;</code></li>
 <li><code>X-PJAX: &quot;true&quot;</code></li>
-<li><code>X-PJAX-Selectors</code> :<br>
-A serialized JSON array of selectors, taken from  <code>options.selectors</code> . You can use this to send back only the elements that Pjax will use to switch, instead of sending the whole page. Note that you’ll need to deserialize this on the server (Such as by using  <code>JSON.parse()</code> )</li>
+<li><code>X-PJAX-Selectors</code>:<br>  A serialized JSON array of selectors, taken from <code>options.selectors</code>. You can use this to send back only the elements that Pjax will use to switch, instead of sending the whole page. Note that you’ll need to deserialize this on the server (Such as by using <code>JSON.parse()</code>)</li>
 </ul>
-<h3 id="response-headers"><a class="markdownIt-Anchor" href="#response-headers">#</a> Response Headers</h3>
-<p>Pjax looks for the following headers on the response:</p>
+<h3 id="Response-Headers"><a href="#Response-Headers" class="headerlink" title="Response Headers"></a>Response Headers</h3><p>Pjax looks for the following headers on the response:</p>
 <ul>
-<li><code>X-PJAX-URL</code>  or  <code>X-XHR-Redirected-To</code></li>
+<li><code>X-PJAX-URL</code> or <code>X-XHR-Redirected-To</code></li>
 </ul>
-<p>Pjax first checks the  <code>responseURL</code>  property on the XHR object to see if the request was redirected by the server. Most browsers support this, but not all. To ensure Pjax will be able to tell when the request is redirected, you can include one of these headers with the response, set to the final URL.</p>
-<h2 id="dom-ready-state"><a class="markdownIt-Anchor" href="#dom-ready-state">#</a> DOM Ready State</h2>
-<p>Most of the time, you will have code related to the current DOM that you only execute when the DOM is ready.</p>
+<p>Pjax first checks the <code>responseURL</code> property on the XHR object to see if the request was redirected by the server. Most browsers support this, but not all. To ensure Pjax will be able to tell when the request is redirected, you can include one of these headers with the response, set to the final URL.</p>
+<h2 id="DOM-Ready-State"><a href="#DOM-Ready-State" class="headerlink" title="DOM Ready State"></a>DOM Ready State</h2><p>Most of the time, you will have code related to the current DOM that you only execute when the DOM is ready.</p>
 <p>Since Pjax doesn’t automatically re-execute your previous code each time you load a page, you’ll need to add code to re-trigger the DOM ready code. Here’s a simple example:</p>
-<figure class="highlight js"><figcaption data-lang="JavaScript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">function</span> <span class="token function">whenDOMReady</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="2"></td><td><pre>  <span class="token comment">// do your stuff</span></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="4"></td><td><pre></pre></td></tr><tr><td data-num="5"></td><td><pre><span class="token function">whenDOMReady</span><span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token keyword">var</span> pjax <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Pjax</span><span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre>document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"pjax:success"</span><span class="token punctuation">,</span> whenDOMReady<span class="token punctuation">)</span></pre></td></tr></table></figure><p><em>Note: Don’t create the Pjax instance in the  <code>whenDOMReady</code>  function.</em></p>
-<p>If you want to just update a specific part (which is a good idea), you can add the DOM-related code in a function and re-execute this function when the  <code>pjax:success</code>  event is fired.</p>
-<figure class="highlight js"><figcaption data-lang="JavaScript"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token comment">// do your global stuff</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token comment">//... DOM ready code</span></pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token keyword">function</span> <span class="token function">whenContainerReady</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>  <span class="token comment">// do your container related stuff</span></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="7"></td><td><pre></pre></td></tr><tr><td data-num="8"></td><td><pre><span class="token function">whenContainerReady</span><span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="9"></td><td><pre></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token keyword">var</span> pjax <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Pjax</span><span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="11"></td><td><pre></pre></td></tr><tr><td data-num="12"></td><td><pre>document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"pjax:success"</span><span class="token punctuation">,</span> whenContainerReady<span class="token punctuation">)</span></pre></td></tr></table></figure><h2 id="faq"><a class="markdownIt-Anchor" href="#faq">#</a> FAQ</h2>
-<h3 id="q-disqus-doesnt-work-anymore-how-can-i-fix-that"><a class="markdownIt-Anchor" href="#q-disqus-doesnt-work-anymore-how-can-i-fix-that">#</a> Q: Disqus doesn’t work anymore, how can I fix that ?</h3>
-<h4 id="a-there-are-a-few-things-you-need-to-do"><a class="markdownIt-Anchor" href="#a-there-are-a-few-things-you-need-to-do">#</a> A: There are a few things you need to do:</h4>
-<ul>
-<li>
-<p>Wrap your Disqus snippet into a DOM element that you will add to the  <code>selector</code>  property (or just wrap it with  <code>class=&quot;js-Pjax&quot;</code> ) and be sure to have at least an empty wrapper on each page (to avoid differences of DOM between pages).</p>
+<pre><code class="js">function whenDOMReady() {
+  // do your stuff
+}
+
+whenDOMReady()
+
+var pjax = new Pjax()
+
+document.addEventListener(&quot;pjax:success&quot;, whenDOMReady)
+</code></pre>
+<p><em>Note: Don’t create the Pjax instance in the <code>whenDOMReady</code> function.</em></p>
+<p>If you want to just update a specific part (which is a good idea), you can add the DOM-related code in a function and re-execute this function when the <code>pjax:success</code> event is fired.</p>
+<pre><code class="js">// do your global stuff
+//... DOM ready code
+
+function whenContainerReady() {
+  // do your container related stuff
+}
+
+whenContainerReady()
+
+var pjax = new Pjax()
+
+document.addEventListener(&quot;pjax:success&quot;, whenContainerReady)
+</code></pre>
+<h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><h3 id="Q-Disqus-doesn’t-work-anymore-how-can-I-fix-that"><a href="#Q-Disqus-doesn’t-work-anymore-how-can-I-fix-that" class="headerlink" title="Q: Disqus doesn’t work anymore, how can I fix that ?"></a>Q: Disqus doesn’t work anymore, how can I fix that ?</h3><h4 id="A-There-are-a-few-things-you-need-to-do"><a href="#A-There-are-a-few-things-you-need-to-do" class="headerlink" title="A: There are a few things you need to do:"></a>A: There are a few things you need to do:</h4><ul>
+<li><p>Wrap your Disqus snippet into a DOM element that you will add to the <code>selector</code> property (or just wrap it with <code>class=&quot;js-Pjax&quot;</code>) and be sure to have at least an empty wrapper on each page (to avoid differences of DOM between pages).</p>
 </li>
-<li>
-<p>Edit your Disqus snippet like the one below.</p>
+<li><p>Edit your Disqus snippet like the one below.</p>
 </li>
 </ul>
-<h4 id="disqus-snippet-before-pjax-integration"><a class="markdownIt-Anchor" href="#disqus-snippet-before-pjax-integration">#</a> Disqus snippet <em>before</em> Pjax integration</h4>
-<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"></pre></td></tr><tr><td data-num="2"></td><td><pre>  <span class="token keyword">var</span> disqus_shortname <span class="token operator">=</span> <span class="token string">'YOURSHORTNAME'</span></pre></td></tr><tr><td data-num="3"></td><td><pre>  <span class="token keyword">var</span> disqus_identifier <span class="token operator">=</span> <span class="token string">'PAGEID'</span></pre></td></tr><tr><td data-num="4"></td><td><pre>  <span class="token keyword">var</span> disqus_url <span class="token operator">=</span> <span class="token string">'PAGEURL'</span></pre></td></tr><tr><td data-num="5"></td><td><pre>  <span class="token keyword">var</span> disqus_script <span class="token operator">=</span> <span class="token string">'embed.js'</span></pre></td></tr><tr><td data-num="6"></td><td><pre></pre></td></tr><tr><td data-num="7"></td><td><pre>  <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">d<span class="token punctuation">,</span>s</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>  s <span class="token operator">=</span> d<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'script'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>s<span class="token punctuation">.</span>async<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>s<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">'//'</span> <span class="token operator">+</span> disqus_shortname <span class="token operator">+</span> <span class="token string">'.disqus.com/'</span><span class="token operator">+</span>disqus_script<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="9"></td><td><pre>  <span class="token punctuation">(</span>d<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'head'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="11"></td><td><pre></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><h4 id="disqus-snippet-after-pjax-integration"><a class="markdownIt-Anchor" href="#disqus-snippet-after-pjax-integration">#</a> Disqus snippet <em>after</em> Pjax integration</h4>
-<figure class="highlight html"><figcaption data-lang="HTML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>js-Pjax<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token comment">&lt;!-- needs to be here on every Pjax-ified page, even if empty --></span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token comment">&lt;!-- if (some condition) &#123; // eventual server-side test to know whether or not you include this script --></span></pre></td></tr><tr><td data-num="3"></td><td><pre>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token keyword">var</span> disqus_shortname <span class="token operator">=</span> <span class="token string">'YOURSHORTNAME'</span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token keyword">var</span> disqus_identifier <span class="token operator">=</span> <span class="token string">'PAGEID'</span></pre></td></tr><tr><td data-num="6"></td><td><pre>    <span class="token keyword">var</span> disqus_url <span class="token operator">=</span> <span class="token string">'PAGEURL'</span></pre></td></tr><tr><td data-num="7"></td><td><pre>    <span class="token keyword">var</span> disqus_script <span class="token operator">=</span> <span class="token string">'embed.js'</span></pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token comment">// here we will only load the disqus &lt;script> if not already loaded</span></pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>window<span class="token punctuation">.</span><span class="token constant">DISQUS</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>      <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">d<span class="token punctuation">,</span>s</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="12"></td><td><pre>      s <span class="token operator">=</span> d<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'script'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>s<span class="token punctuation">.</span>async<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>s<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">'//'</span> <span class="token operator">+</span> disqus_shortname <span class="token operator">+</span> <span class="token string">'.disqus.com/'</span><span class="token operator">+</span>disqus_script<span class="token punctuation">;</span></pre></td></tr><tr><td data-num="13"></td><td><pre>      <span class="token punctuation">(</span>d<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'head'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="14"></td><td><pre>      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span></pre></td></tr><tr><td data-num="15"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="16"></td><td><pre>    <span class="token comment">// if disqus &lt;script> is already loaded, we just reset disqus the right way</span></pre></td></tr><tr><td data-num="17"></td><td><pre>    <span class="token comment">// see https://help.disqus.com/developer/using-disqus-on-ajax-sites</span></pre></td></tr><tr><td data-num="18"></td><td><pre>    <span class="token keyword">else</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="19"></td><td><pre>      <span class="token constant">DISQUS</span><span class="token punctuation">.</span><span class="token function">reset</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="20"></td><td><pre>        reload<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span></pre></td></tr><tr><td data-num="21"></td><td><pre>        <span class="token function-variable function">config</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="22"></td><td><pre>          <span class="token keyword">this</span><span class="token punctuation">.</span>page<span class="token punctuation">.</span>identifier <span class="token operator">=</span> disqus_identifier</pre></td></tr><tr><td data-num="23"></td><td><pre>          <span class="token keyword">this</span><span class="token punctuation">.</span>page<span class="token punctuation">.</span>url <span class="token operator">=</span> disqus_url</pre></td></tr><tr><td data-num="24"></td><td><pre>        <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="25"></td><td><pre>      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span></pre></td></tr><tr><td data-num="26"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="27"></td><td><pre>  </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="28"></td><td><pre><span class="token comment">&lt;!-- &#125; --></span></pre></td></tr><tr><td data-num="29"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><p><strong>Note: Pjax only handles inline  <code>&lt;script&gt;</code>  blocks for the container you are switching.</strong></p>
-<h2 id="examples"><a class="markdownIt-Anchor" href="#examples">#</a> Examples</h2>
-<p>Clone this repository and run  <code>npm run example</code> , which will open the example app in your browser.</p>
-<h2 id="contributing"><a class="markdownIt-Anchor" href="#contributing">#</a> CONTRIBUTING</h2>
-<ul>
+<h4 id="Disqus-snippet-before-Pjax-integration"><a href="#Disqus-snippet-before-Pjax-integration" class="headerlink" title="Disqus snippet before Pjax integration"></a>Disqus snippet <em>before</em> Pjax integration</h4><pre><code class="html">&lt;script&gt;
+  var disqus_shortname = &#39;YOURSHORTNAME&#39;
+  var disqus_identifier = &#39;PAGEID&#39;
+  var disqus_url = &#39;PAGEURL&#39;
+  var disqus_script = &#39;embed.js&#39;
+
+  (function(d,s) {
+  s = d.createElement(&#39;script&#39;);s.async=1;s.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/&#39;+disqus_script;
+  (d.getElementsByTagName(&#39;head&#39;)[0]).appendChild(s);
+  })(document)
+&lt;/script&gt;
+</code></pre>
+<h4 id="Disqus-snippet-after-Pjax-integration"><a href="#Disqus-snippet-after-Pjax-integration" class="headerlink" title="Disqus snippet after Pjax integration"></a>Disqus snippet <em>after</em> Pjax integration</h4><pre><code class="html">&lt;div class=&quot;js-Pjax&quot;&gt;&lt;!-- needs to be here on every Pjax-ified page, even if empty --&gt;
+&lt;!-- if (some condition) { // eventual server-side test to know whether or not you include this script --&gt;
+  &lt;script&gt;
+    var disqus_shortname = &#39;YOURSHORTNAME&#39;
+    var disqus_identifier = &#39;PAGEID&#39;
+    var disqus_url = &#39;PAGEURL&#39;
+    var disqus_script = &#39;embed.js&#39;
+
+    // here we will only load the disqus &lt;script&gt; if not already loaded
+    if (!window.DISQUS) {
+      (function(d,s) {
+      s = d.createElement(&#39;script&#39;);s.async=1;s.src = &#39;//&#39; + disqus_shortname + &#39;.disqus.com/&#39;+disqus_script;
+      (d.getElementsByTagName(&#39;head&#39;)[0]).appendChild(s);
+      })(document)
+    }
+    // if disqus &lt;script&gt; is already loaded, we just reset disqus the right way
+    // see https://help.disqus.com/developer/using-disqus-on-ajax-sites
+    else {
+      DISQUS.reset({
+        reload: true,
+        config: function () {
+          this.page.identifier = disqus_identifier
+          this.page.url = disqus_url
+        }
+      })
+    }
+  &lt;/script&gt;
+&lt;!-- } --&gt;
+&lt;/div&gt;
+</code></pre>
+<p><strong>Note: Pjax only handles inline <code>&lt;script&gt;</code> blocks for the container you are switching.</strong></p>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><p>Clone this repository and run <code>npm run example</code>, which will open the example app in your browser.</p>
+<h2 id="CONTRIBUTING"><a href="#CONTRIBUTING" class="headerlink" title="CONTRIBUTING"></a>CONTRIBUTING</h2><ul>
 <li>⇄ Pull requests and ★ Stars are always welcome.</li>
 <li>For bugs and feature requests, please create an issue.</li>
-<li>Pull requests must be accompanied by passing automated tests ( <code>npm test</code> ). If the API is changed, please update the Typescript definitions as well ( <code>pjax.d.ts</code> ).</li>
+<li>Pull requests must be accompanied by passing automated tests (<code>npm test</code>). If the API is changed, please update the Typescript definitions as well (<code>pjax.d.ts</code>).</li>
 </ul>
-<h2 id="changelog"><a class="markdownIt-Anchor" href="#changelog">#</a> <a href="CHANGELOG.md">CHANGELOG</a></h2>
-<h2 id="license"><a class="markdownIt-Anchor" href="#license">#</a> <a href="LICENSE">LICENSE</a></h2>
+<h2 id="CHANGELOG"><a href="#CHANGELOG" class="headerlink" title="CHANGELOG"></a><a href="CHANGELOG.md">CHANGELOG</a></h2><h2 id="LICENSE"><a href="#LICENSE" class="headerlink" title="LICENSE"></a><a href="LICENSE">LICENSE</a></h2>
